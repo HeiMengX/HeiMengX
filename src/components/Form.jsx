@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from 'react';
+import { forwardRef } from 'react';
 import {
   Form as CForm,
 } from 'antd';
@@ -12,6 +12,9 @@ function getItem (
   if (!form) {
     return null;
   }
+  console.log(form,
+    key,
+    disabledForms);
   return (
     <CForm.Item key={key} {...form.props}>
       {form.Component && (
