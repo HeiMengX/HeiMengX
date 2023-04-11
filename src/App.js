@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Form } from './components/Form'
+import { testBo } from "./utils/test"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function Test () {
+  const formMap = testBo.getFormMap()
+  const orders = ['name', 'job']
+  const [form] = Form.useForm()
+
+  return (<Form
+    form={form}
+    formMap={formMap}
+    formOrder={orders}
+    labelCol={{ span: 4 }}
+    labelWrap
+    layout='vertical'
+    autoComplete='off'
+  />)
 }
-
-export default App;
